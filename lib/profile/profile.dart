@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/shared/bottom_nav.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class Profile extends StatelessWidget {
       body: Center(
         child: Text('Profile'),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

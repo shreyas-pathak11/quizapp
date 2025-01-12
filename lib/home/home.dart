@@ -8,9 +8,9 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-            child: const Text('About'),
+            child: const Text('Topics'),
             onPressed: () {
-              Navigator.pushNamed(context, '/about');
+              Navigator.pushNamed(context, '/topics');
             }),
       ),
     );
