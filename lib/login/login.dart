@@ -23,6 +23,12 @@ class Login extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            LoginButton(
+              icon: FontAwesomeIcons.google,
+              text: 'Sign in with Google',
+              loginMethod: () => AuthService().googleSignIn(),
+              color: Colors.red,
+            ),
             Flexible(
               child: LoginButton(
                 icon: FontAwesomeIcons.userNinja,
