@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
           } else if (snapshot.hasError) {
             return const Center(child: Text('An error occurred'));
           } else if (snapshot.hasData) {
-            return const Topics();
+            return const TopicsScreen();
           } else {
             return const Login();
           }

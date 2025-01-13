@@ -9,5 +9,5 @@ var appRoutes = {
   '/login': (context) => const Login(),
   '/about': (context) => const About(),
   '/profile': (context) => const Profile(),
-  '/topics': (context) => const Topics(),
+  '/topics': (context) => const TopicsScreen(),
 };
