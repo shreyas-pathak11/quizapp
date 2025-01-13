@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/shared/bottom_nav.dart';
+import 'package:quizapp/services/auth.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+  const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Profile'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      body: ElevatedButton(
+          child: Text('signout'),
+          onPressed: () async {
+            await AuthService().signOut();
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil('/', (route) => false);
+          }),
     );
   }
 }

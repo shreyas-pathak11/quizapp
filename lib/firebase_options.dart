@@ -59,4 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'flutter-demo-taa',
     storageBucket: 'flutter-demo-taa.firebasestorage.app',
   );
+
 }

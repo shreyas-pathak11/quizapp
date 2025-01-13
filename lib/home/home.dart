@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/login/login.dart';
+import 'package:quizapp/services/auth.dart';
+import 'package:quizapp/topics/topics.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-            child: const Text('Topics'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/topics');
-            }),
-      ),
-    );
+    return StreamBuilder(
+        stream: AuthService().userStream,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return const Center(child: Text('An error occurred'));
+          } else if (snapshot.hasData) {
+            return const Topics();
+          } else {
+            return const Login();
+          }
+        });
   }
 }
